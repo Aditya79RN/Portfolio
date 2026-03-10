@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Narayana Aditya | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--cream:#F7F3EC;
+--black:#1C1C1C;
+--gold:#C6A969;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--cream);
+color:var(--black);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.name{
+font-size:72px;
+font-weight:600;
+letter-spacing:6px;
+transition:.5s;
+}
+
+.tagline{
+margin-top:15px;
+font-size:18px;
+opacity:0;
+transition:.5s;
+}
+
+.scroll{
+margin-top:40px;
+opacity:0;
+}
+
+/* Sticky Name */
+
+.sticky{
+position:fixed;
+top:20px;
+left:30px;
+font-weight:600;
+opacity:0;
+transition:.4s;
+}
+
+/* Sections */
+
+section{
+padding:80px 10%;
+min-height:100vh;
+}
+
+h2{
+margin-bottom:20px;
+font-size:30px;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill-box{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.btn{
+margin:10px;
+display:inline-block;
+padding:10px 20px;
+border:1px solid var(--black);
+border-radius:8px;
+text-decoration:none;
+color:var(--black);
+transition:.3s;
+}
+
+.btn:hover{
+background:var(--black);
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sticky" id="sticky">NARAYANA ADITYA</div>
+
+<section class="hero">
+
+<h1 class="name" id="name">NAR</h1>
+
+<p class="tagline" id="tagline">
+Building intelligent embedded systems for secure and sustainable mobility.
+</p>
+
+<div class="scroll" id="scroll">Swipe Up ↓</div>
+
+</section>
+
+<section>
+<h2>About Me</h2>
+
+<p>
+I am Narayana Aditya, an ECE student specializing in Embedded Systems. 
+I have hands-on experience in STM32, ESP32, IoT systems, and automotive cybersecurity.
+
+My focus is designing real-time embedded solutions and building intelligent systems
+like CAN bus anomaly detection using machine learning, EV Battery Management Systems,
+and smart IoT-based automation projects.
+
+</p>
+
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>CAN Bus Anomaly Detection</h3>
+<p>Real-time ML-based detection system for DoS attacks in automotive CAN networks.</p>
+</div>
+
+<div class="card">
+<h3>EV Battery Management System</h3>
+<p>ESP32-based BMS monitoring SOC, SOH, and safety protections with IoT dashboard.</p>
+</div>
+
+<div class="card">
+<h3>Smart Parking System</h3>
+<p>IoT-enabled real-time parking monitoring using ESP32 and IR sensors.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill-box">STM32 • ESP32 • Embedded C • RTOS</div>
+<div class="skill-box">CAN Protocol • Automotive Security • ML</div>
+<div class="skill-box">IoT • Firebase • MATLAB • Python</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+<h2>Contact</h2>
+
+<p>Let’s build something impactful together.</p>
+
+<a class="btn" href="#">LinkedIn</a> <a class="btn" href="#">GitHub</a> <a class="btn" href="mailto:yourmail@gmail.com">Email</a>
+
+</section>
+
+<script>
+
+setTimeout(()=>{
+document.getElementById("name").innerHTML="NARAYANA ADITYA";
+document.getElementById("tagline").style.opacity="1";
+document.getElementById("scroll").style.opacity="1";
+},900);
+
+window.addEventListener("scroll",()=>{
+let sticky=document.getElementById("sticky");
+
+if(window.scrollY>200){
+sticky.style.opacity="1";
+}else{
+sticky.style.opacity="0";
+}
+
+});
+
+</script>
+
+</body>
+</html>
