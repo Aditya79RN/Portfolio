@@ -4,12 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Narayana Aditya | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* COLORS */
 
 :root{
 --cream:#F7F3EC;
@@ -35,52 +36,61 @@ color:var(--black);
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 }
 
 .name{
-font-size:72px;
+font-size:75px;
 font-weight:600;
 letter-spacing:6px;
-transition:.5s;
+transition:.6s;
 }
 
 .tagline{
 margin-top:15px;
 font-size:18px;
 opacity:0;
-transition:.5s;
+transition:.6s;
 }
 
 .scroll{
 margin-top:40px;
 opacity:0;
+font-size:14px;
 }
 
-/* Sticky Name */
+/* STICKY NAME */
 
 .sticky{
 position:fixed;
 top:20px;
 left:30px;
 font-weight:600;
+font-size:16px;
 opacity:0;
-transition:.4s;
+transition:.5s;
 }
 
-/* Sections */
+/* SECTIONS */
 
 section{
-padding:80px 10%;
+padding:90px 12%;
 min-height:100vh;
 }
 
 h2{
-margin-bottom:20px;
 font-size:30px;
+margin-bottom:20px;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+line-height:1.7;
 }
 
 /* PROJECTS */
@@ -88,19 +98,21 @@ font-size:30px;
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+gap:22px;
 }
 
 .card{
 background:white;
-padding:20px;
+padding:22px;
 border-radius:12px;
 transition:.3s;
+border:1px solid transparent;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+transform:translateY(-8px);
+border-color:var(--gold);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 /* SKILLS */
@@ -111,7 +123,7 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-.skill-box{
+.skill{
 background:white;
 padding:20px;
 border-radius:10px;
@@ -124,8 +136,8 @@ text-align:center;
 }
 
 .btn{
-margin:10px;
 display:inline-block;
+margin:10px;
 padding:10px 20px;
 border:1px solid var(--black);
 border-radius:8px;
@@ -145,7 +157,11 @@ color:white;
 
 <body>
 
+<!-- Sticky Name -->
+
 <div class="sticky" id="sticky">NARAYANA ADITYA</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -159,58 +175,70 @@ Building intelligent embedded systems for secure and sustainable mobility.
 
 </section>
 
+<!-- ABOUT -->
+
 <section>
+
 <h2>About Me</h2>
 
-<p>
-I am Narayana Aditya, an ECE student specializing in Embedded Systems. 
-I have hands-on experience in STM32, ESP32, IoT systems, and automotive cybersecurity.
+<p class="about">
+I am Narayana Aditya, an ECE student specializing in Embedded Systems with hands-on experience in STM32, ESP32, IoT systems, and automotive cybersecurity.
 
-My focus is designing real-time embedded solutions and building intelligent systems
-like CAN bus anomaly detection using machine learning, EV Battery Management Systems,
-and smart IoT-based automation projects.
+My work focuses on real-time system design and intelligent embedded solutions such as CAN bus anomaly detection using machine learning, EV battery management systems, and IoT automation projects.
+
+I enjoy building efficient systems that solve real-world engineering problems in mobility and automation.
 
 </p>
 
 </section>
 
+<!-- PROJECTS -->
+
 <section>
+
 <h2>Projects</h2>
 
 <div class="projects">
 
 <div class="card">
-<h3>CAN Bus Anomaly Detection</h3>
-<p>Real-time ML-based detection system for DoS attacks in automotive CAN networks.</p>
+<h3>Machine Learning Vigilance – CAN Bus Security</h3>
+<p>Real-time anomaly detection for CAN networks using ML models and DoS datasets.</p>
 </div>
 
 <div class="card">
 <h3>EV Battery Management System</h3>
-<p>ESP32-based BMS monitoring SOC, SOH, and safety protections with IoT dashboard.</p>
+<p>ESP32-based BMS monitoring SOC, SOH, and protections with IoT dashboard.</p>
 </div>
 
 <div class="card">
 <h3>Smart Parking System</h3>
-<p>IoT-enabled real-time parking monitoring using ESP32 and IR sensors.</p>
+<p>IoT-enabled parking monitoring using ESP32 and IR sensors.</p>
 </div>
 
 </div>
+
 </section>
 
+<!-- SKILLS -->
+
 <section>
+
 <h2>Skills</h2>
 
 <div class="skills">
 
-<div class="skill-box">STM32 • ESP32 • Embedded C • RTOS</div>
-<div class="skill-box">CAN Protocol • Automotive Security • ML</div>
-<div class="skill-box">IoT • Firebase • MATLAB • Python</div>
+<div class="skill">STM32 • ESP32 • Embedded C • RTOS</div>
+<div class="skill">CAN Protocol • Automotive Security • ML</div>
+<div class="skill">IoT • Firebase • MATLAB • Python</div>
 
 </div>
 
 </section>
 
+<!-- CONTACT -->
+
 <section class="contact">
+
 <h2>Contact</h2>
 
 <p>Let’s build something impactful together.</p>
@@ -221,11 +249,15 @@ and smart IoT-based automation projects.
 
 <script>
 
+/* NAR → FULL NAME */
+
 setTimeout(()=>{
 document.getElementById("name").innerHTML="NARAYANA ADITYA";
 document.getElementById("tagline").style.opacity="1";
 document.getElementById("scroll").style.opacity="1";
 },900);
+
+/* Sticky on Scroll */
 
 window.addEventListener("scroll",()=>{
 let sticky=document.getElementById("sticky");
